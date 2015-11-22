@@ -64,6 +64,6 @@ See more details about how to run the script and what steps it follows in the RE
 one average (mean) value for each variable for 30 subjects and their 6 activities (30*6=180)
 
 ## 68 variables: 
-1. subject id (1 to 30) identifying the individual who performed the experiment as integer
-2. activity type (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING and LAYING) as factor
-3-68. 66 columns containing the average of accelaration mean and st dev data as numeric data
+1.subject id (1 to 30) identifying the individual who performed the experiment as integer
+2.activity type (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING and LAYING) as factor
+3.-68. 66 columns containing the average of accelaration mean and st dev data as numeric data
