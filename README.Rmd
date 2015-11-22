@@ -1,0 +1,56 @@
+---
+title: "README"
+author: "zsszabo86"
+date: "November 22, 2015"
+output: html_document
+---
+
+# The raw data used by the run_analysis.R script
+
+The data used are collected from accelerometers of Samsung Galaxy S II smartphones.
+
+Experiments have been carried out with a group of 30 volunteers. Each person performed six activities wearing a smartphone on the waist which captured 3-axial linear acceleration and 3-axial angular velocity. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+The dataset incudes the following files:
+
+- features.txt
+- activity_labels.txt
+- train/
+    X_train.txt
+    y_train.txt
+    subject_train.txt
+- test/
+    X_test.txt
+    y_test.txt
+    subject_test.txt
+
+More infromation can be found in the README.txt and features_info.txt files of the UCI HAR Dataset folder.
+
+# What the run_analysis.R script does
+
+- Merges the training and the test sets to create one data set.
+- Extracts only the measurements on the mean and standard deviation for each measurement. 
+- Uses descriptive activity names to name the activities in the data set
+- Appropriately labels the data set with descriptive variable names. 
+- From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+The code follows the steps below:
+
+1. fetch column header (features.txt)
+2. we want to retain all the XXXXmean() and XXXXstd() measures. first fetch the column indeces (features.txt)
+3. fetch x data (X_train.txt, X_test.txt)
+4. filter out the columns we are interested in (use the same column indeces as in step 2)
+5. name the column headers given as in features.txt
+6. add subject id (new column from subject_train.txt, subject_test.txt)
+7. add activity data (activity_labels.txt, y_train.txt, y_test.txt)
+8. combine test and train datasets into one data frame
+9. get the summary of the dataset grouped by the subject and the type of activity
+10. save the new summary tidy dataset into a txt file
+
+# How to run the run_analysis.R script
+
+You can run the script in R studio on the console.
+
+Make sure that 
+1. you have installed the dplyr package and that
+2. your working directory contains the run_analysis.R script and the UCI HAR Dataset with the 8 txt files listed above. 
