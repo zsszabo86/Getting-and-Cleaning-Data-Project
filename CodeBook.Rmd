@@ -1,0 +1,69 @@
+---
+title: "CodeBook.md"
+author: "zsszabo86"
+date: "November 22, 2015"
+output: html_document
+---
+
+The raw data are collected from accelerometers of Samsung Galaxy S II smartphones.
+
+Experiments have been carried out with a group of 30 volunteers. Each person performed six activities wearing a smartphone on the waist which captured 3-axial linear acceleration and 3-axial angular velocity. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+The dataset incudes the following files:
+
+- features.txt
+- activity_labels.txt
+- train/
+    * X_train.txt
+    * y_train.txt
+    * subject_train.txt
+- test/
+    * X_test.txt
+    * y_test.txt
+    * subject_test.txt
+
+# Details of raw datafiles
+
+## features.txt
+Contains the 561 column headers
+561 observations of 2 variables (number, variable names for columns)
+
+## activity_labels.txt
+Contains the codes from 1 to 6 associated with different types of activities such as WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING and LAYING
+6 observations of 2 variables (code, activity type description)
+
+## X_train.txt, X_test.txt
+Contain all of the acceleration data for the training and test datasets
+train: 7352 observations of 561 variables
+test: 2947 observations of 561 variables
+
+## y_train.txt, y_test.txt
+Contain the activity codes (1 to 6) associated with each measurement (observation)
+train: 7352 observations of 1 variable
+test: 2947 observations of 1 variable
+
+## subject_train.txt, subject_test.txt
+Contain the subject id (1 to 30 for all volunteers) associated with each measurement (observation)
+train: 7352 observations of 1 variable
+test: 2947 observations of 1 variable
+
+# Data transformations by the run_analysis.R script
+
+The script first of all filters all the mean and standard deviation columns of the accelartaion data (66 columns among the 561 columns of X_train.txt, X_test.txt files). 
+Then it calulates their mean values for each subject and each activity type (reduction from 7352+2947 rows to 180 rows). 
+
+The script also combines the training and test datasets.
+
+The script finally outputs one tidy dataset in a txt file.
+
+See more details about how to run the script and what steps it follows in the README.Rmd
+
+# The summary tidy dataset
+
+## 180 observations: 
+one average (mean) value for each variable for 30 subjects and their 6 activities (30*6=180)
+
+## 68 variables: 
+1. subject id (1 to 30) identifying the individual who performed the experiment as integer
+2. activity type (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING and LAYING) as factor
+3-68. 66 columns containing the average of accelaration mean and st dev data as numeric data

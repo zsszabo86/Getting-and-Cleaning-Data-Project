@@ -16,13 +16,13 @@ The dataset incudes the following files:
 - features.txt
 - activity_labels.txt
 - train/
-    X_train.txt
-    y_train.txt
-    subject_train.txt
+    * X_train.txt
+    * y_train.txt
+    * subject_train.txt
 - test/
-    X_test.txt
-    y_test.txt
-    subject_test.txt
+    * X_test.txt
+    * y_test.txt
+    * subject_test.txt
 
 More infromation can be found in the README.txt and features_info.txt files of the UCI HAR Dataset folder.
 
